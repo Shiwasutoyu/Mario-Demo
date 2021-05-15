@@ -1,0 +1,17 @@
+/* .container {
+  width: 100%;
+  background-color: aquamarine;
+} */
+
+/* .content {
+  background-color: aqua;
+  width: 70%;
+  margin: 0 auto;
+} */
+
+.game-disp {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

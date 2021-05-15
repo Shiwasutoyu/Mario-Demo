@@ -9,10 +9,19 @@
   margin: 0 auto;
 } */
 
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  margin: 0;
+}
+
+
 .game-disp {
+  
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  margin: 20px;
 }
 
 .move-btn1 {
@@ -24,6 +33,7 @@
   left: 40%;
   transform: translateX(-50%);
   text-align: center;
+  margin-left: 20px;
 }
 
 p {
@@ -40,5 +50,6 @@ p {
   left: 60%;
   transform: translateX(-50%);
   text-align: center;
+  margin-right: 20px;
 }
 

@@ -15,3 +15,30 @@
   transform: translateX(-50%);
 }
 
+.move-btn1 {
+  background-color: brown;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 500px;
+  left: 40%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+p {
+  color: orange;
+  font-size: 30px;
+}
+
+.move-btn2 {
+  background-color: brown;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 500px;
+  left: 60%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+

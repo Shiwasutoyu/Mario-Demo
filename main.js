@@ -137,14 +137,17 @@ function mainLoop() {
 //----押されたとき------
 document.onkeydown = function(e) {
 
-  if(e.keyCode == 37)keyb.Left = true;
-  if(e.keyCode == 39)keyb.Right = true;
-  if(e.keyCode == 90)keyb.BBUTTON = true;
-  if(e.keyCode == 88)keyb.ABUTTON = true;
+  if(e.keyCode == 37){
+    keyb.Left = true;  //left
+    console.log('OK');
+  }
+  if(e.keyCode == 39)keyb.Right = true;  //rigth
+  if(e.keyCode == 90)keyb.BBUTTON = true;  //z
+  if(e.keyCode == 88)keyb.ABUTTON = true;  //x
 
   
-  if(e.keyCode == 65 )field.scx--;
-  if(e.keyCode == 83 )field.scx++;
+  if(e.keyCode == 65 )field.scx--;  //a
+  if(e.keyCode == 83 )field.scx++;  //s
 }
 
 //----離されたとき------
@@ -157,5 +160,31 @@ document.onkeyup = function(e) {
 
 
 }
+
+//---------スマホでタッチのとき---------------
+
+const LeftBTN = document.getElementById("move-btn1");
+const RightBTN = document.getElementById("move-btn2");
+
+LeftBTN.addEventListener("touchstart", () =>{
+  keyb.Left = true; 
+  console.log('OK');
+
+})
+
+RightBTN.addEventListener("touchstart", () =>{
+  keyb.Right = true; 
+})
+
+LeftBTN.addEventListener("touchend", () =>{
+  keyb.Left = false; 
+})
+
+RightBTN.addEventListener("touchend", () =>{
+  keyb.Right = false; 
+})
+
+
+
 
 

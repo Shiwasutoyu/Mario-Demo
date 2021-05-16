@@ -9,8 +9,12 @@ let can = document.getElementById("can");
 let con = can.getContext("2d");
 
 //-----------------
-vcan.width = SCREEN_SIZE_W;
-vcan.height = SCREEN_SIZE_H;
+// vcan.width = SCREEN_SIZE_W;
+// vcan.height = SCREEN_SIZE_H;
+
+let gameDisp = document.getElementById("gameDisp");
+vcan.width = gameDisp.clientWidth;
+vcan.height = gameDisp.clientHeight;
 
 // can.width = SCREEN_SIZE_W*2;
 // can.height = SCREEN_SIZE_H*2;
@@ -168,7 +172,7 @@ document.onkeyup = function(e) {
 //---------------スマホでタッチのとき--------------------
 
 //-----レスポンシブ対応（ロード時に一度だけ）----
-let gameDisp = document.getElementById("gameDisp");
+// let gameDisp = document.getElementById("gameDisp");
 
 let resize = () => {
   can.width = gameDisp.clientWidth;

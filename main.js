@@ -164,20 +164,11 @@ document.onkeyup = function(e) {
 
 //---------スマホでタッチのとき---------------
 
-// document.body.addEventListener("dblclick", function(e){e.preventDefault();},{passive:false});
-// document.body.addEventListener("touchmove",function(e){
-//   e.preventDefault();
-// });
-// document.addEventListener("touchmove",event => {
-//   if(event.touches.length > 1){
-//     event.preventDefault();
-//   }
-// }, true);
 function no_scaling(){
   document.addEventListener("touchmove",mobile_no_scroll,{passive:false});
 }
 function mobile_no_scroll(event){
-  if(event.touches.length >= 2) {
+  if(event.touches.length >= 1) {
     event.preventDefault();
   }
 }

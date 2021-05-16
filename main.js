@@ -167,6 +167,11 @@ document.body.addEventListener("dblclick", function(e){e.preventDefault();},{pas
 document.body.addEventListener("touchmove",function(e){
   e.preventDefault();
 });
+document.addEventListener("touchmove",event => {
+  if(event.touches.length > 1){
+    event.preventDefault();
+  }
+}, true);
 
 const LeftBTN = document.getElementById("move-btn1");
 const RightBTN = document.getElementById("move-btn2");

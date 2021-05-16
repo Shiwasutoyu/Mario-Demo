@@ -12,13 +12,13 @@ let con = can.getContext("2d");
 vcan.width = SCREEN_SIZE_W;
 vcan.height = SCREEN_SIZE_H;
 
-can.width = SCREEN_SIZE_W*2;
-can.height = SCREEN_SIZE_H*2;
+// can.width = SCREEN_SIZE_W*2;
+// can.height = SCREEN_SIZE_H*2;
 
-con.mozimageSmoothingEnabled = false;
-con.msimageSmoothingEnabled = false;
-con.webkitimageSmoothingEnabled = false;
-con.imageSmoothingEnabled = false;
+// con.mozimageSmoothingEnabled = false;
+// con.msimageSmoothingEnabled = false;
+// con.webkitimageSmoothingEnabled = false;
+// con.imageSmoothingEnabled = false;   <- これだけで鮮明化OK
 
 //----フレームレート維持------
 let frameCount = 0;
@@ -109,14 +109,17 @@ function draw(){
 
 window.onload = function() {
   startTime = performance.now();
-  mainLoop();
   no_scaling();
+  resize();      //------メインループ前で一度だけリサイズ------
+  mainLoop();
 }
 
 function mainLoop() {
 
   let nowTime = performance.now();
   let nowFrame = (nowTime - startTime)/ GAME_FPS;
+
+  
 
   if(nowFrame > frameCount) {
     let c = 0;
@@ -162,8 +165,18 @@ document.onkeyup = function(e) {
 
 }
 
-//---------スマホでタッチのとき---------------
+//---------------スマホでタッチのとき--------------------
 
+//-----レスポンシブ対応（ロード時に一度だけ）----
+let gameDisp = document.getElementById("gameDisp");
+
+let resize = () => {
+  can.width = gameDisp.clientWidth;
+  can.height = gameDisp.clientHeight;
+  con.imageSmoothingEnabled = false;  //---鮮明化----
+};
+
+//---------ズームできないようにする------------
 function no_scaling(){
   document.addEventListener("touchmove",mobile_no_scroll,{passive:false});
 }

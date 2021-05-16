@@ -21,11 +21,17 @@ body {
 
 
 .game-disp {
-  
+  background-color: lawngreen;
+  width: 90%;
+  height: 69vh;
   position: absolute;
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
+  
+}
+
+canvas {
   
 }
 

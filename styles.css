@@ -19,37 +19,76 @@ body {
 .game-disp {
   
   position: absolute;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  margin: 20px;
+  
+}
+
+.btn-area {
+  /* background-color: lavender; */
+  width: 456px;
+  height: 180px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-left {
+  /* background-color: khaki; */
+  width: 170px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .move-btn1 {
   background-color: brown;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 500px;
-  left: 40%;
-  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
   text-align: center;
-  margin-left: 20px;
 }
 
 p {
   color: orange;
-  font-size: 30px;
+  font-size: 20px;
+  margin: 0;
+  line-height: 70px;
 }
 
 .move-btn2 {
   background-color: brown;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 500px;
-  left: 60%;
-  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
   text-align: center;
-  margin-right: 20px;
 }
+
+.btn-right {
+  /* background-color: khaki; */
+  width: 170px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a-btn {
+  background-color: brown;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
+.b-btn {
+  background-color: brown;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
 

@@ -110,6 +110,7 @@ function draw(){
 window.onload = function() {
   startTime = performance.now();
   mainLoop();
+  no_scaling();
 }
 
 function mainLoop() {
@@ -167,11 +168,19 @@ document.onkeyup = function(e) {
 // document.body.addEventListener("touchmove",function(e){
 //   e.preventDefault();
 // });
-document.addEventListener("touchmove",event => {
-  if(event.touches.length > 1){
+// document.addEventListener("touchmove",event => {
+//   if(event.touches.length > 1){
+//     event.preventDefault();
+//   }
+// }, true);
+function no_scaling(){
+  document.addEventListener("touchmove",mobile_no_scroll,{passive:false});
+}
+function mobile_no_scroll(event){
+  if(event.touches.length >= 2) {
     event.preventDefault();
   }
-}, true);
+}
 
 const LeftBTN = document.getElementById("move-btn1");
 const RightBTN = document.getElementById("move-btn2");

@@ -12,6 +12,14 @@ const MAP_SIZE_H = SCREEN_SIZE_H/16;
 const FIELD_SIZE_W = 256;
 const FIELD_SIZE_H = 14;
 
+//--------スマホのとき関連--------
+const LeftBTN = document.getElementById("move-btn1");
+const RightBTN = document.getElementById("move-btn2");
+const aBTN = document.getElementById("a-btn");
+const bBTN = document.getElementById("b-btn");
+const resizeBTN = document.getElementById("resize-btn");
+let sizeUp = false;
+
 
 
 //-------基本クラス-------

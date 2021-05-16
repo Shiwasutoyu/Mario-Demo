@@ -21,7 +21,7 @@ body {
 
 
 .game-disp {
-  background-color: lawngreen;
+  /* background-color: lawngreen; */
   width: 90%;
   height: 69vh;
   position: absolute;
@@ -32,7 +32,7 @@ body {
 }
 
 canvas {
-  
+  /* transform: translateX(50%); */
 }
 
 .btn-area {
@@ -40,11 +40,24 @@ canvas {
   width: 80%;
   height: 180px;
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.btn-area2 {
+  /* background-color: lavender; */
+  width: 80%;
+  height: 60px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -100,6 +113,20 @@ p {
   width: 50px;
   height: 50px;
   text-align: center;
+}
+
+.resize-btn {
+  background-color: rgb(103, 103, 103);
+  width: 50px;
+  height: 30px;
+  text-align: center;
+}
+
+.resize-btn p {
+  color: rgb(193, 193, 193);
+  font-size: 12px;
+  margin: 0;
+  line-height: 30px;
 }
 
 

@@ -19,10 +19,17 @@ vcan.height = gameDisp.clientHeight;
 // can.width = SCREEN_SIZE_W*2;
 // can.height = SCREEN_SIZE_H*2;
 
+can.width = gameDisp.clientWidth*2;
+can.height = gameDisp.clientHeight*2;
+
 // con.mozimageSmoothingEnabled = false;
 // con.msimageSmoothingEnabled = false;
 // con.webkitimageSmoothingEnabled = false;
-// con.imageSmoothingEnabled = false;   <- これだけで鮮明化OK
+con.imageSmoothingEnabled = false;   
+                     //<- これだけで鮮明化OK
+
+let SSW = SCREEN_SIZE_W*2;
+let SSH = SCREEN_SIZE_H*2;
 
 //----フレームレート維持------
 let frameCount = 0;
@@ -104,7 +111,14 @@ function draw(){
   vcon.fillText("FRAME:" + frameCount, 10,20);
     
   //----仮想画面から実画面へ拡大転送-------
-  con.drawImage(vcan, 0, 0, SCREEN_SIZE_W, SCREEN_SIZE_H, 0, 0, SCREEN_SIZE_W*2, SCREEN_SIZE_H*2);
+
+  if(sizeUp==false){
+    con.drawImage(vcan, 0, 0, SCREEN_SIZE_W, SCREEN_SIZE_H, 0, 0, SSW, SSH);
+  }
+  else{
+    con.drawImage(vcan, 0, 0, SCREEN_SIZE_W, SCREEN_SIZE_H, 0, 0, SSW, SSH);
+  }
+  
 }
 
 
@@ -114,16 +128,17 @@ function draw(){
 window.onload = function() {
   startTime = performance.now();
   no_scaling();
-  resize();      //------メインループ前で一度だけリサイズ------
+  resize();     
   mainLoop();
+  
 }
 
 function mainLoop() {
 
   let nowTime = performance.now();
   let nowFrame = (nowTime - startTime)/ GAME_FPS;
-
-  
+   
+  // resize();  
 
   if(nowFrame > frameCount) {
     let c = 0;
@@ -190,11 +205,6 @@ function mobile_no_scroll(event){
   }
 }
 
-const LeftBTN = document.getElementById("move-btn1");
-const RightBTN = document.getElementById("move-btn2");
-const aBTN = document.getElementById("a-btn");
-const bBTN = document.getElementById("b-btn");
-
 //-----L & R------
 LeftBTN.addEventListener("touchstart", () =>{
   keyb.Left = true; 
@@ -230,5 +240,30 @@ bBTN.addEventListener("mouseup", () =>{
   keyb.ABUTTON = false;
 })
 
+//---------Resize-------------
+
+resizeBTN.addEventListener("mousedown", () =>{
+
+  if(sizeUp==false) {
+    vcon.fillStyle = "#FFF";
+    vcon.fillRect(0,0,SCREEN_SIZE_W,SCREEN_SIZE_H);
+    con.drawImage(vcan, 0, 0, SCREEN_SIZE_W, SCREEN_SIZE_H, 0, 0, SSW, SSH);
+    SSW = SCREEN_SIZE_W*1.8;
+    SSH = SCREEN_SIZE_H*1.8;
+    sizeUp = true;
+  }
+  else {
+    vcon.fillStyle = "#FFF";
+    vcon.fillRect(0,0,SCREEN_SIZE_W,SCREEN_SIZE_H);
+    con.drawImage(vcan, 0, 0, SCREEN_SIZE_W, SCREEN_SIZE_H, 0, 0, SSW, SSH);
+    SSW = SCREEN_SIZE_W*2;
+    SSH = SCREEN_SIZE_H*2;
+    sizeUp = false;
+  }
+})
+
+// resizeBTN.addEventListener("mouseup", () =>{
+
+// })
 
 

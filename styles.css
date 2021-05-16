@@ -50,7 +50,16 @@ canvas {
 
 .btn-left {
   /* background-color: khaki; */
-  width: 170px;
+  width: 30%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-right {
+  /* background-color: khaki; */
+  width: 30%;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -78,14 +87,6 @@ p {
   text-align: center;
 }
 
-.btn-right {
-  /* background-color: khaki; */
-  width: 170px;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .a-btn {
   background-color: brown;

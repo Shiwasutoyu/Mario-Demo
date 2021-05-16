@@ -165,11 +165,12 @@ document.onkeyup = function(e) {
 
 const LeftBTN = document.getElementById("move-btn1");
 const RightBTN = document.getElementById("move-btn2");
+const aBTN = document.getElementById("a-btn");
+const bBTN = document.getElementById("b-btn");
 
+//-----L & R------
 LeftBTN.addEventListener("touchstart", () =>{
   keyb.Left = true; 
-  console.log('OK');
-
 })
 
 RightBTN.addEventListener("touchstart", () =>{
@@ -184,7 +185,23 @@ RightBTN.addEventListener("touchend", () =>{
   keyb.Right = false; 
 })
 
+//------A & B----------
 
+aBTN.addEventListener("touchstart", () =>{
+  keyb.ABUTTON = true; 
+})
+
+bBTN.addEventListener("mousedown", () =>{
+  keyb.ABUTTON = true;
+})
+
+aBTN.addEventListener("touchend", () =>{
+  keyb.ABUTTON = false; 
+})
+
+bBTN.addEventListener("mouseup", () =>{
+  keyb.ABUTTON = false;
+})
 
 
 

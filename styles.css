@@ -9,6 +9,10 @@
   margin: 0 auto;
 } */
 
+html {
+  touch-action: manipulation;
+}
+
 body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

@@ -163,10 +163,10 @@ document.onkeyup = function(e) {
 
 //---------スマホでタッチのとき---------------
 
-document.body.addEventListener("dblclick", function(e){e.preventDefault();},{passive:false});
-document.body.addEventListener("touchmove",function(e){
-  e.preventDefault();
-});
+// document.body.addEventListener("dblclick", function(e){e.preventDefault();},{passive:false});
+// document.body.addEventListener("touchmove",function(e){
+//   e.preventDefault();
+// });
 document.addEventListener("touchmove",event => {
   if(event.touches.length > 1){
     event.preventDefault();

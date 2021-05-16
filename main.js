@@ -163,6 +163,8 @@ document.onkeyup = function(e) {
 
 //---------スマホでタッチのとき---------------
 
+document.addEventListener("dblclick", function(e){e.preventDefault();},{passive:false});
+
 const LeftBTN = document.getElementById("move-btn1");
 const RightBTN = document.getElementById("move-btn2");
 const aBTN = document.getElementById("a-btn");

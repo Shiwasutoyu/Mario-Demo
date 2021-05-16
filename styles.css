@@ -50,7 +50,7 @@ canvas {
 
 .btn-left {
   /* background-color: khaki; */
-  width: 30%;
+  width: 40%;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -59,7 +59,7 @@ canvas {
 
 .btn-right {
   /* background-color: khaki; */
-  width: 30%;
+  width: 40%;
   height: 100px;
   display: flex;
   justify-content: space-between;
